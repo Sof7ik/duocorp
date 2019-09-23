@@ -1,0 +1,571 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	/*font-family: 'Gayathri', sans-serif;
+
+	font-family: 'Manjari', sans-serif;
+
+	font-family: 'Chilanka', cursive;		Полурукописный*/
+
+	font-family: 'Oswald', sans-serif;
+
+	/*font-family: 'Lobster', cursive;		Instagram
+
+	font-family: 'Caveat', cursive;			Рукописный
+
+	font-family: 'Pattaya', sans-serif;		Instagram*/
+}
+
+html, body {
+	height: 100%;
+}
+
+h1, p {
+	text-align: center;
+	vertical-align: middle;
+}
+
+p {
+	/*font-family: 'Manjari', sans-serif;*/
+	/*font-family: 'Gayathri', sans-serif;*/
+	font-size: 20px;
+}
+
+li.social {
+
+}
+
+a.navButton {
+	text-decoration: none;
+	color: black;
+	transition: all 0.4s;
+	font-size: 25px;
+}
+
+a.navButton:hover {
+	color: #FF573D;
+	transition: all 0.4s;
+	text-shadow: 0px 0px 3px black;
+}
+
+@media screen and (max-device-width: 560px) {
+	a.navButton {
+		font-size: 27px;
+	}
+}	
+
+a.social, img.social {
+	display: block;
+	transition: all .4s;
+}
+
+img.social:hover {
+	opacity: 0.7;
+	transition: all .4s;
+}
+
+@media screen and (max-device-width: 560px){
+	img.social {
+		width: 30px;
+	}
+}
+
+header { /*стили для навигационного меню+блока с информацией обо мне*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-image: linear-gradient(to right, #BABDC5, #FFFFFF, #BABDC5);
+}
+
+.top {
+	display: block;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 5;
+	background-color: #ff823a;
+	opacity: 0.75;
+	text-decoration: none;
+	padding: 10px 25px;
+	color: white;
+	border-radius: 0px 10px 10px 0px;
+	transition: all 0.2s;
+	font-size: 15px;
+}
+
+.top:hover {
+	padding: 10px 30px;
+	background-color: #ff5d00;
+	transition: all 0.2s;
+	opacity: 1;
+}
+
+@media screen and (max-device-width: 1000px) {
+	.top {
+		display: none;
+	} 
+}
+
+.leftButtons { /*стили для верхнего левого меню*/
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5% 10%;	
+}
+
+.leftSocialNav {
+	width: 25%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	list-style-type: none;
+}
+
+@media all and (max-device-width: 1000px) {
+	.leftSocialNav {
+		width: 30%;
+	}
+}
+
+ul.info { /*стили для правого навигационного меню*/
+	display: flex;
+	align-items: center;
+	padding: 0px;
+}
+
+a.tel_number { /*стили для номера телефона*/
+	display: block;
+	color: black;
+	font-size: 21px;
+	font-weight: bold;
+	text-decoration: none;
+	margin-right: 20px;
+	transition: all 0.7s;
+}
+
+a.tel_number:hover {
+	text-shadow: 1px 1px 2px green;
+}
+
+@media screen and (max-device-width: 900px) {
+	a.tel_number {
+		font-size: 30px;
+	}
+}
+
+#callback { /*стили для кнопки заказть звонок*/
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	border: 2px solid pink;
+	color: #FF573D;
+	font-size: 19px;
+	padding: 5px 30px;
+	transition: all 0.5s;
+	background-color: white;
+}
+
+#callback:hover { /*стили для ховера кнопки заказть звонок*/
+	transition: all 0.5s;
+	color: white;
+	background-color: #FF573D;
+	cursor: pointer;
+}
+
+div.intro { /*стили для блока с информацией обо мне*/
+	display: flex;
+	flex-flow: column wrap;
+	align-items: flex-start;
+	justify-content: center;
+	background-image: url('../../img/avatars/introCroppedBordered.png');
+	background-size: 48%;
+	background-repeat: no-repeat;
+	background-position: 84% 16%;
+	padding: 10% 7%;
+}
+
+div.intro h1 { /*стили для имени фамилии*/
+	margin-bottom: -10px;
+	margin-top: 0px;
+	font-size: 45px;
+
+}
+
+@media screen and (max-device-width: 1000px) {
+	div.intro h1 {
+		font-size: 50px;
+	}
+}
+
+@media screen and (max-device-width: 560px) {
+	div.intro h1 {
+		font-size: 60px;
+	}
+}
+
+div.intro h3 { /*стили для профессии*/
+	font-weight: normal;
+	color: #5A5A5A;
+	font-size: 25px;
+}
+
+@media screen and (max-device-width: 1000px) {
+	div.intro h3 {
+		font-size: 35px;
+	}
+}
+
+@media screen and (max-device-width: 560px) {
+	div.intro h3 {
+		font-size: 35px;
+	}
+}
+
+a.lookMore { /*стили для кнопки узнать больше*/ 
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #FF823A;
+	color: white;
+	font-size: 18px;
+	width: 20%;
+	padding: 1% 0;
+	transition: all 0.5s;
+	background-color: #FF823A;
+}
+
+a.lookMore:hover{ /*стили для ховера кнопки узнать больше*/ 
+	border: 1px solid pink;
+	padding: 7px 80px;
+	cursor: pointer;
+	background-color: #FF5D00;
+	color: white;
+}
+
+@media screen and (max-device-width: 1000px) {
+	a.lookMore {
+		font-size: 23px;
+
+	}
+}
+
+@media screen and (max-device-width: 560px) {
+	a.lookMore {
+		font-size: 25px;
+
+	}
+}
+
+section.aboutMe {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	padding-top: 2%;
+	margin-bottom: 2%;
+}
+
+@media screen and (max-device-width: 560px) {
+	section.aboutMe > h1 {
+		font-size: 45px;
+	}
+}
+
+section.aboutMe > p {
+	margin-top: 0.5%;
+	padding-bottom: 1%;
+	border-bottom: 2px solid #839EF2;
+}
+
+@media screen and (max-device-width: 560px) {
+	section.aboutMe > p {
+		font-size: 25px;
+		width: 70%;
+		border-bottom: 2px solid #839EF2;
+	}
+}
+
+section.aboutMe > div.photoAndText {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2%;
+	margin-bottom: 1.5%;
+}
+
+@media screen and (max-device-width: 560px) {
+	section.aboutMe > div.photoAndText {
+		width: 100%;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: flex-start;
+	}
+}
+
+section.aboutMe > div.photoAndText > img {
+	width: 26%;
+	border-radius: 5%;
+	margin-right: 4%;
+	transition: all .6s;
+}
+
+section.aboutMe > div.photoAndText > img:hover {
+	transform: scale(1.2);
+	transition: all .6s;
+}
+
+@media screen and (max-device-width: 560px) { 
+	section.aboutMe > div.photoAndText > img {
+		width: 60%;
+	}
+}
+
+section.aboutMe > div.photoAndText > p.quote {
+	text-align: center;
+	width: 50%;
+	margin-bottom: 2%;
+	font-family: 'Caveat', cursive;
+	font-size: 27px;
+	/*font-family: 'Chilanka', cursive;
+	font-size: 22px;*/
+	transition: all .2s;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+@media screen and (max-device-width: 560px) {
+	section.aboutMe > div.photoAndText > p.quote {
+		font-size: 15px;
+		font-family: 'Oswald', sans-serif;
+		width: 100%;
+	}
+}
+
+section.aboutMe > div.photoAndText > p.quote:hover {
+	box-shadow: 0px 0px 25px 10px #BABDC5;
+	transition: all .2s;
+	transform: scale(1.1);
+}
+
+section.myProfCourses {
+	padding-top: 1%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	background-image: linear-gradient(to right, #CDCED1, #FFFFFF, #CDCED1); 
+}
+
+@media screen and (max-device-width: 560px) {
+	section.myProfCourses > h1 {
+		font-size: 40px;
+	}
+}
+
+ul.myProfCourses {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding: 2% 0.5%;
+}
+
+@media screen and (max-device-width: 560px) {
+	ul.myProfCourses {
+		flex-flow: column nowrap;
+	}
+}
+
+ul.myProfCourses > li {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+ul.myProfCourses > li > p {
+	background-color: #83B6FA;
+	padding: 2% 8%;
+	border: 2px solid #FFFFFF;
+	border-radius: 5px;
+	transition: all .3s;
+	box-shadow: 0px 0px 15px 3px #FFFFFF;
+}
+
+@media screen and (max-device-width: 560px) {
+	ul.myProfCourses > li > p {
+		font-size: 27px;
+		margin-top: 10%;
+		padding: 2% 18%;
+	}
+}
+
+ul.myProfCourses > li > p:hover {
+	cursor: default;
+}
+
+ul.myProfCourses > li > p.course2:hover {
+	cursor: default;
+}
+
+ul.myProfCourses > li > img {
+	width: 35%;
+	display: block;
+	margin-top: 2%;
+	outline: 2px solid #37A1FF;
+	transition: all .3s;
+	box-shadow: 0px 0px 15px 6px #37A1FF;
+}
+
+@media screen and (max-device-width: 560px) {
+	ul.myProfCourses > li > img {
+		width: 60%;
+	}
+}
+
+div.footer { /*стили для футера*/
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 1%;
+	padding: 1% 0;
+	background-image: linear-gradient(to right, white, #1d1d1d07 , white);
+	background-color: #1d1d1d20;
+}
+
+div.footer > ul.navigation, div.footer > ul.feedback { /*стили для левой и средней менюшки*/
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+div.footer > ul.navigation li {
+	margin-bottom: 10%;
+}#F
+
+@media screen and (max-device-width: 560px){
+	div.footer > ul.navigation > li > a {
+		font-size: 30px;
+	}
+}
+
+div.footer > ul.feedback > li { /*стили для списка среденей менюшки*/
+	display: block;
+	margin-bottom: 2%;
+}
+
+div.footer > ul.feedback > li a {
+	text-decoration: none;
+	color: black;
+}
+
+@media screen and (max-device-width: 560px) {
+	div.footer > ul.feedback > li a {
+		font-size: 20px;
+	}
+}
+
+div.footer > ul.feedback > li img { /*стили изображений средней менюшки*/
+	margin-right: 10px;
+}
+
+@media screen and (max-device-width: 560px) {
+	div.footer > ul.feedback > li img {
+		width: 28px;
+	}
+}
+
+@media screen and (max-device-width: 560px){
+	div.footer > ul.feedback > li > a {
+		font-size: 25px;
+	}
+}
+
+#footer_callback { /*стили для кнопки заказть звонок*/
+	display: block;
+	text-align: center;
+	border: 2px solid pink;
+	color: #FF573D;
+	font-size: 19px;
+	padding: 1% 10%;
+	transition: all 0.5s;
+	background-color: white;
+	text-decoration: none;
+}
+
+#footer_callback:hover { /*стили для ховера кнопки заказть звонок*/
+	transition: all 0.5s;
+	color: white;
+	background-color: #FF573D;
+	cursor: pointer;
+}
+
+@media screen and (max-device-width: 560px) {
+	#footer_callback {
+		font-size: 25px;
+		padding: 5px 30px;
+	}
+}
+
+div.footer > ul.right { /*стили для контейнера правой менюшки*/
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+}
+
+div.footer > ul.right > ul.right1 { /*стили для списка соц.сетей правой менюшки*/
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 10%;
+	padding-left: 0;
+}
+
+@media screen and (max-device-width: 560px) {
+	div.footer > ul.right > ul.right1 {
+		display: none;
+	}
+}
+
+.copyright { /*стили для блока копирайта*/
+	background-color: #272834;
+	padding-bottom: 3px;
+	padding-top: 3px;
+}
+.copyright p { /*стили для текста внутри блока копирайта*/
+	font-size: 20px;
+	text-align: center;
+	color: #ffffff9c;
+}
+
+@media screen and (max-device-width: 560px) {
+	div.copyright p{
+		font-size: 28px;
+	}
+}
+
+.copyright a {
+	font-size: 22px;
+	text-align: center;
+	color: #ffffff9c;
+	text-decoration: none;
+	transition: all .2s;
+}
+
+@media screen and (max-device-width: 560px) {
+	div.copyright > p a {
+		font-size: 28px;
+	}
+}
+
+.copyright a:hover {
+	color: #DEDEDE;
+	transition: all .2s;
+}

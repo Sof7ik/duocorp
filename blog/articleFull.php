@@ -1,53 +1,7 @@
 <?
-session_start();
-require ('connection.php');
 
-$userEmail = $_POST['email'];
-$userPassword = $_POST['password'];
-$loginSubmit = $_POST['loginSubmit'];
+require "auth.php";
 
-/*echo $userEmail;
-echo "<br>";
-echo $userPassword;
-echo "<br>";
-echo $loginSubmit;
-echo "<br>";*/
-
-
-if (isset($_POST['loginSubmit'])) {
-	$login = mysqli_query($link, "SELECT * FROM `users` WHERE `userEmail` = '$userEmail' AND `userPassword` = '$userPassword';");
-
-	$loginResult = mysqli_fetch_assoc($login);
-
-	$countLoginRows = mysqli_num_rows($login);
-
-	/*print_r ($loginResult);
-
-	echo "<br>";
-
-	echo "Количество строк - " . $countLoginRows;*/
-
-
-	if ($countLoginRows == 1) {
-		$_SESSION['userNickName'] = $loginResult['userNickName'];
-		$_SESSION['userEmail'] = $loginResult['userEmail'];
-		$_SESSION['userPassword'] = $loginResult['userPassword'];
-		$_SESSION['regDate'] = $loginResult['regDate'];
-		$_SESSION['idRole'] = $loginResult['idRole'];
-	}
-
-
-
-	/*echo "<br>";
-	echo $_SESSION['userNickName'];
-	echo "<br>";
-	echo $_SESSION['userEmail'];
-	echo "<br>";
-	echo $_SESSION['userPassword'];
-	echo "<br>";
-	echo $_SESSION['regDate'];
-	echo "<br>";*/	
-}
 ?>
 
 <!DOCTYPE html>
@@ -56,77 +10,49 @@ if (isset($_POST['loginSubmit'])) {
 	<title>Блог Антона Овчинникова</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="blogstyle/styleBlog.css">
+	<link rel="stylesheet" type="text/css" href="blogstyle/styleFooter.css">
 	<link href="https://fonts.googleapis.com/css?family=Caveat|Chilanka|Gayathri|Lobster|Manjari|Oswald|Pattaya&display=swap" rel="stylesheet">
+
+	<style>
+
+	div.article {
+		outline: 2px solid black;
+		margin-top: 1.5%;
+		padding: 0.5% 0.5%;
+		display: block;
+		-webkit-line-clamp: 4;  /*количество строк*/ 
+		-webkit-box-orient: vertical;
+		text-overflow: unset;
+	}
+
+	div.article > p.hardbass {
+		margin-top: 1%;
+		text-indent: 20px;
+		text-align: justify;
+		padding: 0% 2%;
+		overflow: visible;
+	}
+
+	</style>
+
 </head>
 <body>
 
-<header>
-
-	<div class="leftButtons">
-		<a class="top" href="#top">Вверх</a>
-
-		<ul class="info"> <!--правое навигационное меню-->
-			<li><a class="telNumber" href="tel:+79057661646">+7 (123) 456 78 90</a></li>
-			<li style="margin-top: 3%;" class="li1"><a class="callback" href="callback.php">Свяжитесь со мной</a></li>
-		</ul>
-	</div>
-
-	<div class="login">
-		<?
-			if (isset($_SESSION['userNickName'])) {
-				echo "<p class='name'>Вы вошли как <a href='cabinet.php'>" . $_SESSION['userNickName'] . "</a></p>";
-				/*echo "Роль - " . $_SESSION['idRole'];*/
-					if ($_SESSION['idRole'] == 1) { 
-						?>
-						<a class="logout" href="articleAdd.php">ДОБАВИТЬ СТАТЬЮ</a>
-						<?
-					}
-
-				?>
-				<a class="logout" href="logout.php">ВЫЙТИ</a>
-				<a href="../index.php">ГЛАВНАЯ СТРАНИЦА</a>
-
-				<?
-			}
-
-			elseif (!isset($_SESSION['userNickName'])) {
-				?>
-				<form action="" method="POST">
-					<input type='text' name="email">
-					<input type='text' name="password">
-					<input type="submit" name="loginSubmit">
-				</form>
-				<a href="../index.php">ГЛАВНАЯ СТРАНИЦА</a>
-				<?
-			}
-		?>
-	</div>
-
-</header>
+<?require "includes/header.php"?>
 
 <div class="columns">
 
-	<div class="categoriesLeft">
-
-		<ul class="categorySelect">
-			<li class="category">Категория 1</li>
-			<li class="category">Категория 1</li>
-			<li class="category">Категория 1</li>
-			<li class="category">Категория 1</li>
-			<li class="category">Категория 1</li>
-			<li class="category">Категория 1</li>
-			<li class="category">Категория 1</li>
-			<li class="category">Категория 1</li>
-			<li class="category">Категория 1</li>
-		</ul>	 
-
-	</div>	
+	<? /*include "includes/categories.php"*/ ?>
 	
 	<div class="articleWrapper">
+		<a href='blog.php' class="display">Показать все статьи</a>
 
 		<?
-
-		$selectArticles = mysqli_query($link, "SELECT * FROM `articles`;");
+		$articleId = $_GET['id'];
+		$selectArticles = mysqli_query($link, "SELECT * FROM `articles` WHERE `idArticle` = '$articleId';");
+		$selectCategories = mysqli_query($link, "SELECT `categoryName` FROM `categories`, `articles` WHERE categories.`categoryId` = articles.`categoryId` AND articles.`idArticle` = '$articleId';");
+		$selectCategoriesRes = mysqli_fetch_assoc($selectCategories);
+		/*print_r($selectCategoriesRes);*/
 
 		if ($selectArticles) {
 			while ($selectArticlesResult = mysqli_fetch_assoc($selectArticles)) {
@@ -135,7 +61,8 @@ if (isset($_POST['loginSubmit'])) {
 
 				<div class="article">
 
-					<p class="article"> <?echo $selectArticlesResult['articleName']?> </p>
+					<p class="category">Категория "<? echo $selectCategoriesRes['categoryName'] ?>"</p>
+					<h1 class="article" style="text-align: center;"> <?echo $selectArticlesResult['articleName']?> </h1>
 					<p class="hardbass"> <? echo $selectArticlesResult['articleText']?> </p>
 					<p class="date"> <?echo $selectArticlesResult['articleDate']?> </p>
 
@@ -167,6 +94,8 @@ if (isset($_POST['loginSubmit'])) {
 	</div>
 
 </div>
+
+<?include "../footerBlog.php"?>
 
 </body>
 </html>

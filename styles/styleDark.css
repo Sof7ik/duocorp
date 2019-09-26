@@ -18,11 +18,17 @@
 
 html, body {
 	height: 100%;
+	background-color: #272834 !important;
 }
 
 h1, p {
 	text-align: center;
 	vertical-align: middle;
+	color: white;
+}
+
+a {
+	color: white;
 }
 
 p {
@@ -33,7 +39,7 @@ p {
 
 a.navButton {
 	text-decoration: none;
-	color: black;
+	color: white;
 	transition: all 0.4s;
 	font-size: 25px;
 }
@@ -49,6 +55,10 @@ a.navButton:hover {
 		font-size: 27px;
 	}
 }	
+
+img {
+	display: none;
+}
 
 a.social, img.social {
 	display: block;
@@ -70,7 +80,7 @@ header { /*стили для навигационного меню+блока с
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-image: linear-gradient(to right, #BABDC5, #FFFFFF, #BABDC5);
+	/* background-image: linear-gradient(to right, #BABDC5, #FFFFFF, #BABDC5); */
 }
 
 .top {
@@ -107,7 +117,7 @@ header { /*стили для навигационного меню+блока с
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.5% 10%;	
+	padding: 0.5% 10%;
 }
 
 .leftSocialNav {
@@ -133,7 +143,7 @@ ul.info { /*стили для правого навигационного мен
 
 a.tel_number { /*стили для номера телефона*/
 	display: block;
-	color: black;
+	color: white;
 	font-size: 21px;
 	font-weight: bold;
 	text-decoration: none;
@@ -175,7 +185,7 @@ div.intro { /*стили для блока с информацией обо мн
 	flex-flow: column wrap;
 	align-items: flex-start;
 	justify-content: center;
-	background-image: url('../../img/avatars/introCroppedBordered.png');
+	/* background-image: url('../../img/avatars/introCroppedBordered.png'); */
 	background-size: 48%;
 	background-repeat: no-repeat;
 	background-position: 84% 16%;
@@ -203,7 +213,7 @@ div.intro h1 { /*стили для имени фамилии*/
 
 div.intro h3 { /*стили для профессии*/
 	font-weight: normal;
-	color: #5A5A5A;
+	color: white;
 	font-size: 25px;
 }
 
@@ -353,7 +363,7 @@ section.myProfCourses {
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 	align-items: center;
-	background-image: linear-gradient(to right, #CDCED1, #FFFFFF, #CDCED1); 
+	/* background-image: linear-gradient(to right, #CDCED1, #FFFFFF, #CDCED1);  */
 }
 
 @media screen and (max-device-width: 560px) {
@@ -442,7 +452,7 @@ div.footer { /*стили для футера*/
 	justify-content: space-around;
 	margin-top: 1%;
 	padding: 1% 0;
-	background-image: linear-gradient(to right, white, #1d1d1d07 , white);
+	/* background-image: linear-gradient(to right, white, #1d1d1d07 , white); */
 	background-color: #1d1d1d20;
 }
 
@@ -470,7 +480,7 @@ div.footer > ul.feedback > li { /*стили для списка средене�
 
 div.footer > ul.feedback > li a {
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 
 @media screen and (max-device-width: 560px) {

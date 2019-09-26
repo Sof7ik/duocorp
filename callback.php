@@ -3,7 +3,7 @@
 <head>
 	<title>Связаться с Антоном Овчинниковым</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style/callback.css">
+	<link rel="stylesheet" type="text/css" href="styles/callback.css">
 </head>
 <body>
 

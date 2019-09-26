@@ -24,7 +24,7 @@ header {
 	justify-content: space-between;
 	align-items: flex-start;
 	background-image: url('../../img/bg/backgroundGrayBlured.png');
-	padding: 0.5% 7%;
+	padding: 0.5% 2% 0.5% 6%;
 }
 
 div.leftButtons {
@@ -78,13 +78,20 @@ ul.info > li > a.callback:hover {
 	align-items: center;
 }
 
-a.logout {
-	font-size: 25px;
+div.navButtons {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+a.borderedA {
+	font-size: 20px;
 	display: block;
 	transition: all .3s;
 }
 
-a.logout:hover {
+a.borderedA:hover {
 	text-shadow: #B389D8 0 0 4px;
 	transition: all .3s;
 }
@@ -170,26 +177,53 @@ ul.categorySelect {
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 	align-items: center;
-	background-image: url('../../img/lamp.gif');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 48% 0;
+	padding: 5% 0;
+}
+
+[type="radio"]:checked + label.categorySelect {
+	font-weight: bold;
+	transition: all .2s;
+}
+
+[type="radio"] {
+	display: none;
+}
+
+label.categorySelect {
+	transition: all .2s;
+}
+
+label.categorySelect:hover {
+	font-weight: bold;
+	transition: all .2s;
 }
 
 li.category {
-	margin: 6% 0%;
-	color: white;
+	margin-bottom: 6%;
 }
 
 li.category > a {
 	text-align: center;
 	display: block;
-	color: white;
+}
+
+a.display {
+	display:block; 
+	text-align: right;
+	transition: all .3s;
+	padding: 0.3% 0;
+}
+
+a.display:hover {
+	padding-right: 2%;
+	color: blue;
+	transition: all .3s;
 }
 
 div.articleWrapper {
 	width: 60%;
 	padding: 2% 5%;
+	padding-top: 0.5%;
 	box-shadow: 0px 0px 20px 5px;
 	background-image: linear-gradient(to bottom, #EAEAEA, white, #EAEAEA);
 }
@@ -198,6 +232,16 @@ div.article {
 	outline: 2px solid black;
 	margin-top: 1.5%;
 	padding: 0.5% 0.5%;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;  /*количество строк*/ 
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+}
+
+div.articleHeader {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: 
 }
 
 div.article > h1.article {
@@ -206,11 +250,25 @@ div.article > h1.article {
 	font-size: 24px;
 }
 
+div.article > h1.article > p.category {
+	font-weight: normal;
+	font-size: 10px;
+}
+
 div.article > p.hardbass {
 	margin-top: 1%;
 	text-indent: 20px;
 	text-align: justify;
 	padding: 0% 2%;
+	overflow: hidden;
+}
+
+div.buttonAndDate > a {
+	float:left;
+}
+
+div.buttonAndDate > p {
+	float: right;
 }
 
 div.article > p.date {

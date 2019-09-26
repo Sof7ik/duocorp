@@ -3,9 +3,9 @@
 
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="shortcut icon" href="img/icons/favicon.ico" type="image/png">
 	<link href="https://fonts.googleapis.com/css?family=Caveat|Chilanka|Gayathri|Lobster|Manjari|Oswald|Pattaya&display=swap" rel="stylesheet">
+	<link id="linkStyle" rel="stylesheet" type="text/css" href="styles/style.css">
 	<title>Антон Овичнников - официальный сайт</title>
 </head>
 	
@@ -13,16 +13,18 @@
 <body>
 
 <header>
-
 	<div class="leftButtons">
 		<a class="top" href="#top">Вверх</a>
 		<ul class="leftSocialNav"> <!--левое навигационное меню-->
-			<li class="social"><a class="social" href="https://vk.com/strelokk45"><img src="img/icons/vk.png" class="social"></a></li>
-			<li class="social"><a class="social" href=""><img src="img/icons/facebook-logo.png" class="social"></a></li>
-			<li class="social"><a class="social" href=""><img src="img/icons/twitter-logo-silhouette.png" class="social"></a></li>
-			<li class="social"><a class="social" href=""><img src="img/icons/instagram-social-network-logo-of-photo-camera.png" class="social"></a></li>
-			<li class="social" style="margin-left: 30%;"><a class="navButton" href="blog/blog.php">БЛОГ</a></li>
+			<li class="social"><a class="social" href="https://vk.com/strelokk45" target="_blank"><img src="img/icons/vk.png" class="social"></a></li>
+			<li class="social"><a class="social" href="" target="_blank"><img src="img/icons/facebook-logo.png" class="social"></a></li>
+			<li class="social"><a class="social" href="" target="_blank"><img src="img/icons/twitter-logo-silhouette.png" class="social"></a></li>
+			<li class="social"><a class="social" href="" target="_blank"><img src="img/icons/instagram-social-network-logo-of-photo-camera.png" class="social"></a></li>
+			<li class="social" style="margin-left: 5%;"><a class="navButton" href="blog/blog.php">БЛОГ</a></li>
+			<li class="social" style="margin-left: 5%;"><button id="navButton">ДЛЯ СЛЕПЫХ</button></li>
 		</ul>
+
+		
 
 		<ul class="info"> <!--правое навигационное меню-->
 			<a class="tel_number" href="tel:+79057661646">+7 (123) 456 78 90</a>
@@ -84,34 +86,8 @@
 
 </section>
 
-<div class="footer"> <!-- Сам футер -->
-
-	<ul class="navigation"> <!-- Левое меню навигации в футере -->
-		<li><a class="navButton" href="portfolio.php">ПОРТФОЛИО</a></li>
-	</ul>
-
-	<ul class="feedback"> <!-- Блок обратной связи со мной, посередине футера -->
-		<li><a href="tel:+79057661646"><img src="img/icons/call-answer.png">+7 (123) 456 78 90</a></li>
-		<li><a style="margin-top: 20px;" href="mailto:bychkov.l47@mail.ru"><img src="img/icons/envelope.png">example@mail.ru</a></li>
-	</ul>
-
-	<ul class="right"> <!-- Правое меню, в нем лежит еще одна кнопка звонка и ссылки на мои соц. сети -->
-
-		<a href="callback.php" id="footer_callback">Заказать звонок</a>
-
-		<ul class="right1"> <!-- Создал список соц. сетей -->
-			<li><a class="social" href="https://vk.com/strelokk45"><img src="img/icons/vk.png"class="social"></a></li>
-			<li><a class="social" href=""><img src="img/icons/facebook-logo.png" class="social"></a></li>
-			<li><a class="social" href=""><img src="img/icons/twitter-logo-silhouette.png" class="social"></a></li>
-			<li><a class="social" href=""><img src="img/icons/instagram-social-network-logo-of-photo-camera.png" class="social"></a></li>
-		</ul>
-
-	</ul>
-</div>
-
-<div class="copyright">
-	<p>© <a href="https://vk.com/softikofficial/">Леонид Бычков</a>, 2019</p>
-</div>
+<?include "footer.php"?>
+<script src='script.js'></script>
 
 </body>
 </html>
